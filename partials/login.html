@@ -1,0 +1,51 @@
+
+<div ng-controller="LoginCtrl">
+		<img src="images/login_image@2x.png"></img>
+	
+		<div class="animate-switch-container" ng-switch on="selected">
+			<div class="animate-switch" ng-switch-when="login">
+			  <form class="login_form">
+				<h2 class="center">Log In</h2>
+				<div class="input-group">
+					<div class="input-row">
+						<label>Username</label>
+						<input type="text" class="full" placeholder="Enter your Username" ng-model="User.username"/>
+					</div>
+					<div class="input-row">
+						<label>Password</label>							
+						<input type="password" class="full" placeholder="Enter your Password" ng-model="User.password"/>
+					</div>	
+				</div>
+				<button class='button-main button-block' ng-click="login()">Log In</button>
+			  </form>
+			  <button class="button-main button-block" ng-click="toggleForm(1)">Sign Up</button>
+			</div>  
+			<div class="animate-switch" ng-switch-when="signup">
+				 <form class="signup_form">
+					<h2 class="center">Sign Up</h2>
+					<div class="input-group">
+						<input type="text" class=" full" placeholder="Username"  ng-model="User.username"/>
+						<input type="email" class="full" placeholder="Email" ng-model="User.email"/>		
+						<input type="password" class="full" placeholder="Create Password" ng-model="User.password"/>
+				    </div>	
+				<button class='button-main button-block' ng-click="signUp()" >Sign Up</button>
+			  </form>
+			  <button class="button-main button-block" ng-click="toggleForm(0)">Log In</button>
+			</div>
+		  </div>
+		  
+		  <hr/>
+		  <div class="center" style="margin-bottom: 5px;">
+			  <a class="button fifth" ng-click="FB_login()">
+				<img src="../icons/facebook.png"></img>
+			  </a>
+			  <a class="button fifth" >
+				<img src="../icons/twitter.png"></img>
+			  </a>
+			  <a class="button fifth" >
+				<img src="../icons/google.png"></img>
+			  </a>
+			</div>
+		</div>
+	
+</div>
