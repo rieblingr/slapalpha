@@ -1,45 +1,27 @@
-# SLAP ALPHA - Important Documentation
+# SLAP ALPHA - Documentation Guide
+This project consists of the basic navigation framework of the Slap application as well as implementations for some of the core features.
 
-The seed contains AngularJS libraries, test libraries and a bunch of scripts all preconfigured for
-instant web development gratification. Just clone the repo (or download the zip/tarball), start up
-our (or yours) webserver and you are ready to develop and test your application.
+Due to the fact that this is an Alpha, the application has been architecturally modulated with Angular JS as requirements, specifications, and designs will be added and modified as the application moves toward the full implementation. Modulation of components will ideally provide easier adaptions to these changes. 
 
-The seed app doesn't do much, just shows how to wire two controllers and views together. You can
-check it out by opening app/index.html in your browser (might not work file `file://` scheme in
-certain browsers, see note below).
+For Requirements and Specifications Documentation: 
+https://docs.google.com/document/d/1VAWVrAENEiXhgOBJik3Gyw2mpTlLakIsSdqQSuwQLyM/edit
 
-_Note: While angular is client-side-only technology and it's possible to create angular webapps that
-don't require a backend server at all, we recommend hosting the project files using a local
-webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`._
+For Design and Planning Documentation:
+https://docs.google.com/document/d/1fiiBoKCF2reYNFGjwv6CBFfnuSp-GdjnygR2JVQt-Js/edit
 
+Email ryanriebling@gmail.com or rclarke2112@gmail.com for access to Docs
 
 ### Running the app during development 
 
 First, install Google Chrome Canary (Mobile emulator) - more info (https://developers.google.com/chrome-developer-tools/docs/mobile-emulation)
+Second, install node js 
+(http://nodejs.org/)
 
 * open a terminal or command shell
-* navigate to the SlapAlpha directory
+* navigate to the SlapAlpha www/ directory
 * run 'node web.js' 
 Port will be indicated in terminal window ie 'http://localhost:5000/' 
 Open a Chrome Canary window and enter the URL 
-
-
-### Running the app in production
-
-This really depends on how complex is your app and the overall infrastructure of your system, but
-the general rule is that all you need in production are all the files under the `app/` directory.
-Everything else should be omitted.
-
-Angular apps are really just a bunch of static html, css and js files that just need to be hosted
-somewhere, where they can be accessed by browsers.
-
-If your Angular app is talking to the backend server via xhr or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and a webserver(s).
-
 
 ### Running unit tests
 
@@ -54,11 +36,7 @@ or remote browser.
   * a browser will start and connect to the Karma server (Chrome is default browser, others can be captured by loading the same url as the one in Chrome or by changing the `config/karma.conf.js` file)
 * to run or re-run tests just change any of your source or test javascript files
 
-
 ### End to end testing
-
-Angular ships with a baked-in end-to-end test runner that understands angular, your app and allows
-you to write your tests with jasmine-like BDD syntax.
 
 Requires a webserver, node.js + `./scripts/web-server.js` or your backend server that hosts the angular static files.
 
@@ -73,8 +51,6 @@ info.
   * run the tests from console with [Karma](http://karma-runner.github.io) via
     `scripts/e2e-test.sh` or `script/e2e-test.bat`
 
-### Continuous Integration
-
 
 ## Directory Layout
 
@@ -85,20 +61,19 @@ info.
         angular-snap.css
         ratchet.css
        
-      img/              --> image files
+      images/              --> image files
+      icons/			   --> icon files 
+      
       index.html        --> app layout file (the main html template file of the app)
       index-async.html  --> just like index.html, but loads js files asynchronously
-      js/               --> javascript files
-        app.js          --> application
-        controllers.js  --> application controllers
-        directives.js   --> application directives
-        filters.js      --> custom angular filters
-        services.js     --> custom angular services
+      
+      js/               --> javascript files (Modulated with AngularJS)
+        app.js          --> application	
+       	
         
         
       lib/              --> angular and 3rd party javascript libraries
       	angular-snap.js
-      	mobile-nav.js
       	snap.js
       	parsesdk.js
         angular/
@@ -115,5 +90,7 @@ info.
         myplans.html
         plan-template.html
         settings.html
-
+		
+		
+		
   
