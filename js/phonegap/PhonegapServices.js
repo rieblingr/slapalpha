@@ -3,7 +3,7 @@
 /* Services */
 
 // Simple value service.
-angular.module('slapApp.services', []).
+angular.module('slapApp.phonegapServices', []).
   value('version', '0.1');
 
 // phonegap ready service - listens to deviceready

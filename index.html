@@ -15,31 +15,70 @@
   
 </head>
 
-<body>
-  
-	  <!-- In production use:
+<body> 
+  <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
   
-   <!-- Comment out the following 2 lines to test on the browser-->
+   <!-- Comment out the following 2 lines to test on the browser
   <script src="js/index.js"></script>
-  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="cordova.js"></script> -->
   
+  <!--
+  	Declaration Order: 
+  		Component Libraries
+  		App Level Module 
+  		Top Level Modules
+  		Module Controllers
+  -->
+  
+  <!-- Component Libraries -->
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular/angular-touch.min.js"></script>
   <script src="lib/angular/angular-route.min.js"></script>
-  <script src="lib/angular/angular-resource.min.js"></script>  
   <script src="lib/angular/angular-animate.min.js"></script>
   <script src="lib/snap.js"></script>
   <script src="lib/angular-snap.js"></script>
   <script src="lib/parsesdk.js"></script>	
  
+  
   <script src="js/app.js"></script>
-  <script src="js/phonegap/services.js"></script>
-  <script src="js/parse/services.js"></script>
+  
+  <script src="js/user/User.js"></script>
+   <script src="js/plan/Plan.js"></script>
+
+  <script src="js/phonegap/PhonegapServices.js"></script>
   <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
+  
+  <!--  Common Directory JS Files
+   <script src="js/common/BaseController.js"></script>
+   <script src="js/common/BaseController.js"></script>
+   <script src="js/common/BaseController.js"></script>
+   <script src="js/common/BaseController.js"></script>
+   
+ -->
+ 
+  <!-- Parse Specific -->
+  <script src="js/parse/ParseServices.js"></script>
+  <script src="js/parse/ParseQueryAngular.js"></script>
+  <script src="js/parse/_ParseObjects.js"></script>
+   
+  <script src="js/user/UserModel.js"></script>
+  <script src="js/user/LoginController.js"></script>
+  
+  <script src="js/plan/PlanModel.js"></script>
+  <script src="js/plan/CreatePlanController.js"></script>
+   
+  <!-- Controllers -->   
+  <script src="js/common/DrawerController.js"></script>
+   
+   
+<!-- 
+  <script src="js/plan/CreatePlanController.js"></script>
+  <script src="js/plan/PlanDetailsController.js"></script>
+  <script src="js/plan/PlanModel.js"></script>  
+  <script src="js/plan/PlanService.js"></script>
+ -->
   
   <div class="app">
 	  <div ng-controller="DrawerCtrl">
@@ -52,7 +91,7 @@
  
    <script type="text/javascript">
          // Uncomment when compiling with Cordova
-         app.initialize();  
+         // app.initialize();  
    </script>
    
  </body>

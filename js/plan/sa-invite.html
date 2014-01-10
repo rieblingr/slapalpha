@@ -1,0 +1,17 @@
+<div class="invite-container">
+	<div class="invite-repeat" ng-repeat="invite in invites">
+		<div ng-show="selected==invite" ng-animate="{show:'animate-show', hide:'animate-hide'}">
+			<button class="button left-btn" ng-click="prev($index)"><</button>	
+			<div class="invite-content">	
+				<h3 class="center">{{invite.name}}</h3>
+				<p class="center"> {{invite.info}}</p>  
+				<div class="center">
+					<button class="button-main left">View</button>
+					<button class="button right">RSVP</button>			
+				</div>
+			</div>		
+			<button class="button right-btn" ng-click="next($index)">></button>
+		</div>
+	</div>
+</div> 
+ 

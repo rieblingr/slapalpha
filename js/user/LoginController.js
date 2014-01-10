@@ -1,34 +1,42 @@
+// Reference User module 
+angular.module('User')
+
 /**
+*  Controller to handle logging in and signing up  
 *
-*
-*
-*
-*/ 
-
-var LoginCtrl = function($scope, $location, ParseSerice) {
-	// Perform user login using back-end service
-        $scope.login = function() {
-		  ParseService.login($scope.login.username, $scope.login.password, function(user) {
-		  // When service call is finished, navigate to items page
-		  $location.path('/main');
+**/
+.controller('LoginCtrl', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+	$scope.User =  {
+			username:'',
+			password:'',
+			email: '' 
+	};
+		
+	$scope.forms = ['login', 'signup'];
+	$scope.selected = $scope.forms[0];
+	$scope.toggleForm = function(index) {
+			$scope.selected = $scope.forms[index];
+	}; 
+	
+	//Perform user login using back-end service
+	$scope.login = function() {
+		UserService.login($scope.User.username, $scope.User.password, function(user) {
+			// When service call is finished, navigate to items page
+			$location.path('/main');
 		});
-			}
-
-	  // Perform user signup using back-end service
-			$scope.signUp = function() {
-		    ParseService.signUp($scope.signup.username, $scope.signup.password, function(user) {
-		  // When service call is finished, navigate to items page
-		  $location.path('/main');
+	};
+	
+	// Perform user signup using back-end service
+	$scope.signUp = function() {
+		UserService.signUp($scope.User.username, $scope.User.password, function(user) {
+			// When service call is finished, navigate to items page
+			$location.path('/main');
 		});
-			}
+	};
+	
+	// Add function to check if user is cached and login automatically
+	if (UserService.getUser != null) {
+		$location.path('/main');
+	}
+}]);
 
-	  // Perform user login using Facebook API
-	  $scope.FB_login = function() {
-	      ParseService.FB_login(function(user) {
-		  // When service call is finished, navigate to items page
-		  $location.path('/main');
-		});
-	  }
-};
-
-LoginCtrl.$inject = ['$scope', 'ParseService', '$location'];

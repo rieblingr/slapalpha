@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 
 app.configure(function () {
-   app.use(express.static(__dirname + '/app'));
+   app.use(express.static(__dirname + '/'));
 });
 
 app.use(express.logger());
@@ -14,7 +14,7 @@ app.get('/', function(req, res){
 
 app.get('/*', function(req, res){
   //respond with 404 page or something.
-  res.status(404).sendfile('/app/404.html');  
+  res.status(404).sendfile('/404.html');  
 });
 
 

@@ -4,7 +4,7 @@
  
  -->
 <header class="bar-title">
-	 <a class="button-icon" snap-toggle="left" href="#/">
+	 <a class="button-icon" snap-toggle="left" href="#/main">
 		<img src="../icons/menu2.png"></img>
 	 </a>
 	  <h1 class="title">SLAP</h1>
@@ -40,18 +40,5 @@
 </nav>
 
 <div class="content">
-	<div class="invite-container">
-		<div class="invite-repeat" ng-repeat="invite in invites">
-			<div ng-show="selected==invite" ng-animate="{show:'animate-show', hide:'animate-hide'}">
-				<h3 class="center">{{invite.title}}</h3>
-				<p class="center"> {{invite.info}}</p>  
-				<div class="center">
-				<button class="left">View</button>
-  				<button class="right">RSVP</button>			
-				</div>
-		<button ng-click="prev($index)">Prev</button>
-		<button ng-click="next($index)">Next</button>
-	</div>
-	</div>
-	</div>	
+	
 </div>

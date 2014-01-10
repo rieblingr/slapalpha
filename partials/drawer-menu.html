@@ -1,20 +1,30 @@
 
-
 <snap-drawer>
-	<div class="side-nav__list__container">
-		<ul class="side-nav__list">
-			<li ng-click="" class=" side-nav__list__item">
-				<div class="side-nav__button">Home</div>
-			</li>
-			<li ng-click="" class="side-nav__list__item">
-				<div class="side-nav__button">My Plans</div>
-			</li>		
-			<li ng-click="" class=" side-nav__list__item">
-				<div class="side-nav__button">Groups</div>
-			</li>
-			<li ng-click="" class=" side-nav__list__item">
-				<div class="side-nav__button">Settings</div>
-			</li>
-		</ul>
-	</div>
+	<ul class="list">
+	  <li class="list-divider">Menu</li>
+		<li>
+			<a snap-close href="#/main">
+				Home
+				<span class="chevron"></span>
+			</a>
+		</li>
+		<li>
+			<a snap-close href="#/myplans">
+				My Plans
+				<span class="chevron"></span>
+			</a>
+		</li>
+		<li>
+			<a snap-close href="#/groups">
+				Groups
+				<span class="chevron"></span>
+			</a>
+		</li>
+		<li>
+			<a snap-close href="#/settings">
+				Settings
+				<span class="chevron"></span>
+			</a>
+		</li>
+	</ul>
 </snap-drawer>

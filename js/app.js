@@ -1,22 +1,34 @@
 'use strict';
 
 /**
-* Declare app level module which depends on filters, and services
+* Declare app level module, organize dependencies, define routes and extra configuration settings
 * 
-*
+* Module Dependencies: 
+*	Angular: ngRoute, ngTouch, ngAnimate, snap
+*	Slap: ParseServices/Dataservices, User, Contact, Group, Invite, Plan, PhoneGap 
+*	
 **/
 var slapApp = angular.module('slapApp', [
   'ngRoute',
   'ngTouch',
   'ngAnimate',
   'snap',
-  'slapApp.filters',
-  'slapApp.services',
-  'slapApp.parseService',
-  'slapApp.directives',
+  'DataServices',
+  'ParseServices',
+  'User',
+  'Plan',
   'slapApp.controllers'
-])
-.config(['$routeProvider', function($routeProvider) {
+]).run(['ParseSDK', 'ExtendParseSDK', function(ParseServices, ExtendParseSDK) {
+	// Parse Services are Initialized by injecting and running the modules - ParseServices.js
+	
+	
+}]);
+
+/**
+*	Map routes for partials views and set desired controller
+*
+**/
+slapApp.config(['$routeProvider', function($routeProvider) {
  $routeProvider.when('/login',
 	{templateUrl: 'partials/login.html',
      controller: 'LoginCtrl',
@@ -58,10 +70,16 @@ var slapApp = angular.module('slapApp', [
   	  controllerAs: 'drawerctrl'});
   	 
   $routeProvider.otherwise({redirectTo: '/login'});
-}]) 
-.config(function(snapRemoteProvider) {
+}]);
+
+/**
+*	Additional Configurations: 
+*		- Disable right side drawer
+**/
+slapApp.config(function(snapRemoteProvider) {
     snapRemoteProvider.globalOptions.disable = 'right';
 });
+
 
 function jsonp_callback(data) {
     // returning from async callbacks is (generally) meaningless
