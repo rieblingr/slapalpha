@@ -42,6 +42,14 @@
 	</nav>
 	
 <div class="content">
-	
-
+	<ul class="list">
+		<li class="list-divider">Plan's You Created</li>
+		<li ng-show="!ready">
+			Receiving Data...
+		</li>
+		<li ng-show="ready" ng-repeat="plan in myplans | filter:title">
+			 <strong style="font-size:18px;">{{plan.title}}</strong>
+			 <p style="font-size:16px;">{{plan.info}}</p>			 
+		</li>	 
+	</ul>
 </div>

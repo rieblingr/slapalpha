@@ -1,11 +1,12 @@
 'use strict';
 
-// reference the module we declared for Modulated Parse Services
+// reference the module we declared for Modulated data services
 angular.module('DataServices')
 
 // add a factory
-.factory('PlanModel', ['ParseQueryAngular', function(ParseQueryAngular) {
+.factory('PlanService', ['ParseQueryAngular', function(ParseQueryAngular) {
 	
+	//Model Definition for Plans
 	var Plan = Parse.Object.extendAngular({
 		className: "Plan",
 		
@@ -30,6 +31,7 @@ angular.module('DataServices')
 		}
 	});
 	
+	//Collection Definition for Plans
     var Plans = Parse.Collection.extendAngular({
     	model: Plan,
     	comparator: function(model) {
@@ -38,6 +40,8 @@ angular.module('DataServices')
     	loadMyPlans: function(owner) {
     		this.query = (new Parse.Query(Plan));
     		// use enhanced load() function to fetch collection
+    		this.query.equalTo('owner', owner);
+    		this.query.descending('createdAt');
     		return this.load();
     	},
     	addPlan: function(owner, title, info, rsvpList) {

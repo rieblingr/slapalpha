@@ -40,22 +40,24 @@ Description: Create Plan View
 		</ul>
 	</nav>
  
-<div class="content">
-	
-		<div class="content-padded">
-	
-		  <h2 class="center">USER</h2>
-	  
-		  <input type="text" class="topcoat-text-input full" placeholder="Plan Title" value=""></input>
-		  <textarea class="topcoat-textarea full" rows="6" placeholder="Plan Info"></textarea>
-
-		  <button class="button-main button-block">Invite Friends</button>
-	  
-	  
-		  <button class="button-main button-block">Send</button>
-	  
-		</div>
-	
+<div class="content">	
+	<div class="content-padded">	
+		<ul class="inset list">
+			<li><strong>Owner:</strong> {{newPlan.owner}}</li>
+		</ul>
+		<form>
+			<div class="input-group">
+				<div class="input-row">
+					<label>Title</label>
+					<input type="text" placeholder="Plan Title" ng-model="newPlan.title" value=""></input>
+				</div>	
+			</div>		
+			
+			<textarea rows="6" placeholder="Plan Info" ng-model="newPlan.info"></textarea>
+			
+			<button class="button-main button-block" ng-click="addRsvpList()">Invite Friends</button>
+			<button class="button-main button-block" ng-click="createPlan()">Send</button>
+		</form>
+	</div>
 </div>
-
 

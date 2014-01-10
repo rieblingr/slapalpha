@@ -1,4 +1,8 @@
 
 
-var plan = angular.module('Plan', ['DataServices']);
+var plan = angular.module('Plan', ['DataServices', 'ParseServices']);
 
+plan.config(function(){
+	
+
+});
