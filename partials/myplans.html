@@ -47,9 +47,9 @@
 		<li ng-show="!ready">
 			Receiving Data...
 		</li>
-		<li ng-show="ready" ng-repeat="plan in myplans | filter:title">
-			 <strong style="font-size:18px;">{{plan.title}}</strong>
-			 <p style="font-size:16px;">{{plan.info}}</p>			 
+		<li ng-show="ready" ng-repeat="plan in myplans">
+			 <strong style="font-size:18px;">{{plan.attributes.title}}</strong>
+			 <p style="font-size:16px;">{{plan.attributes.info}}</p>			 
 		</li>	 
 	</ul>
 </div>
