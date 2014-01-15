@@ -72,6 +72,7 @@
   <script src="js/plan/MyPlansController.js"></script>
   
   <script src="js/invite/InviteController.js"></script>
+  <script src="js/invite/InviteDetailsController.js"></script>
    
   <!-- Controllers -->   
   <script src="js/common/DrawerController.js"></script>
@@ -88,7 +89,7 @@
 	  <div ng-controller="DrawerCtrl">
 	  	  <ng-include src="'partials/drawer-menu.html'"></ng-include>
 	  </div>
-	  <snap-content>
+	  <snap-content snap-options="opts">
 		  <ng-view> </ng-view>
 	  </snap-content>		
   </div>

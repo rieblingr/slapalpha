@@ -1,0 +1,64 @@
+<!-- 
+Description: Invite details View
+ 
+ 
+ -->
+ <header class="bar-title">
+	<a class="button-icon" href="#/invites">
+		<img src="../icons/arrow-left3.png"></img>
+	</a>
+	<h1 class="title">Invite Details</h1>
+</header>
+
+<nav class="bar-tab">
+	<ul class="tab-inner">
+	  <li class="tab-item">
+		<a href="#/main">
+		  <img class="tab-icon" src="../icons/Timeline_Icon.png">
+		  <div class="tab-label">Home</div>
+		</a>
+	  </li>
+	  <li class="tab-item">
+		<a href="#/myplans">
+		  <img class="tab-icon" src="../icons/Event_Icon.png">
+		  <div class="tab-label">Plans</div>
+		</a>
+	  </li>
+	  <li class="tab-item">
+		<a href="#/createplan">
+		  <img class="tab-icon" src="../icons/CreateAPlan_Icon.png">
+		  <div class="tab-label">Create</div>
+		</a>
+	  </li>
+	  <li class="tab-item active">
+		<a href="#/invites">
+		  <img class="tab-icon" src="../icons/Plans_Icon.png">
+		  <div class="tab-label">Invites</div>
+		</a>
+	  </li>
+	</ul>
+</nav>
+
+<div class="content">
+	<div class="content-padded">
+		<p> testing: {{routeParams}} </p>
+		<br>
+		<ul class="inset list">
+			<li><strong>From:</strong> {{plan.owner}}</li>
+		</ul>
+	
+		<h2 class="center">{{plan.title}}</h2>
+
+		<div class="info-content">
+			<p>{{plan.info}}</p>
+		</div>
+		<div class="content-padded right">
+			<h2 style="position:absolute;">RSVP:</h2>
+			<a class="button-positive quarter">Yes</a>
+			<a class="button-negative quarter">No</a>
+		</div>
+		<a class="button-block">Invited Friends<span class="count">1</span></a>
+		
+	</div>	
+</div>
+

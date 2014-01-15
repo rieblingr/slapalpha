@@ -43,6 +43,11 @@ slapApp.config(['$routeProvider', function($routeProvider) {
 	{templateUrl: 'partials/myinvites.html',
      controller: 'InvitesCtrl',
 	 controllerAs: 'invitectrl'});
+	 
+  $routeProvider.when('/invites/:inviteId',
+  	{templateUrl: 'partials/invite-details.html',
+  	 controller: 'InviteDetailsCtrl',
+  	 controllerAs: 'invitedetailsctrl'});		 
     
   $routeProvider.when('/myplans', 
   	{templateUrl: 'partials/myplans.html', 
@@ -58,6 +63,11 @@ slapApp.config(['$routeProvider', function($routeProvider) {
 	{templateUrl: '/partials/groups.html', 
 	 controller: 'GroupsCtrl',
 	  controllerAs: 'groupctrl'});
+  
+  $routeProvider.when('/contacts', 
+	{templateUrl: '/partials/contacts.html', 
+	 controller: 'ContactsCtrl',
+	  controllerAs: 'contactctrl'});		 
 	 
   $routeProvider.when('/settings',
 	{templateUrl: '/partials/settings.html',

@@ -207,6 +207,11 @@ a {
   top: 45px;
 }
 
+/* Modifier class to dock any bar below .bar-secondary */
+.bar-header-tertiary {
+  top: 89px;
+}
+
 /* Modifier class to dock any bar to bottom of viewport */
 .bar-footer {
   bottom: 0;

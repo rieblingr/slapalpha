@@ -34,8 +34,8 @@ angular.module('User')
 		});
 	};
 	
-	// Add function to check if user is cached and login automatically
-	if (UserService.getUser != null) {
+	// Add function to check if user is cached and bypass login
+	if (UserService.getUser() != null) {
 		$location.path('/main');
 	}
 }]);
