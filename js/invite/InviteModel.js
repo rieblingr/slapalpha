@@ -5,11 +5,18 @@ angular.module('DataServices')
 // add a factory
 .factory('InviteModel', ['ParseQueryAngular', function(ParseQueryAngular) {
 	
-	var Plan = Parse.Object.extend("Plan");
-	
 	var Invite = Parse.Object.extendAngular({
-		className: "Invite", 
+		className: "Invite", 	
 		
+		setRsvpList: function(rsvpList) {
+			this.set('rsvpList', rsvpList);
+			return this;
+		},
+		
+		setPlan: function(plan) {
+			this.set('plan', plan);
+			return this;
+		},
 		
 		destroyParse: function() {
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
@@ -20,9 +27,6 @@ angular.module('DataServices')
     	model: Invite,
     	comparator: function(model) {
     		return -model.createdAt.getTime();
-    	},
-    	loadMyInvites: function(owner) {
-    		this.query = (
     	}
     });
     

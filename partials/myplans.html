@@ -48,7 +48,7 @@
 			Receiving Data...
 		</li>
 		<li ng-show="ready" ng-repeat="plan in myplans">
-			<a href="#/myplans">
+			<a href="#/myplans/{{plan.id}}">
 			 	<strong style="font-size:18px;">{{plan.attributes.title}}</strong>
 			 	<p style="font-size:16px;">{{plan.attributes.info}}</p>	
 			 	<span class="chevron"></span>	

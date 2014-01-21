@@ -6,6 +6,7 @@ angular.module('Plan')
 *
 */
 .controller('CreatePlanCtrl', ['$scope', '$location', 'UserService', 'PlanService', function($scope, $location, UserService, PlanService) {
+	$scope.location = $location;
 	$scope.planToSave = new PlanService.model;
 	$scope.newPlan = {
 		owner: '',
@@ -15,7 +16,7 @@ angular.module('Plan')
 	};
 	
 	$scope.addRsvpList = function() {
-		alert('Contact List view not implemented yet');
+		
 	};
 	
 	$scope.createPlan = function() {

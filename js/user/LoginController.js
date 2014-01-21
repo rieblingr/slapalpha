@@ -6,6 +6,7 @@ angular.module('User')
 *
 **/
 .controller('LoginCtrl', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+	$scope.location = $location;
 	$scope.User =  {
 			username:'',
 			password:'',
@@ -22,7 +23,7 @@ angular.module('User')
 	$scope.login = function() {
 		UserService.login($scope.User.username, $scope.User.password, function(user) {
 			// When service call is finished, navigate to items page
-			$location.path('/main');
+			$scope.location.path('/main');
 		});
 	};
 	
@@ -30,13 +31,13 @@ angular.module('User')
 	$scope.signUp = function() {
 		UserService.signUp($scope.User.username, $scope.User.password, function(user) {
 			// When service call is finished, navigate to items page
-			$location.path('/main');
+			$scope.location.path('/main');
 		});
 	};
 	
 	// Add function to check if user is cached and bypass login
 	if (UserService.getUser() != null) {
-		$location.path('/main');
+		$scope.location.path('/main');
 	}
 }]);
 

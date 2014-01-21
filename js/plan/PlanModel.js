@@ -25,7 +25,7 @@ angular.module('DataServices')
 		setRsvpList: function(rsvpList) {
 			this.set('rsvpList', rsvpList);
 			return this;
-		},
+		},		
 		destroyParse: function() {
 			return ParseQueryAngular(this,{functionToCall:"destroy"});
 		}
@@ -43,6 +43,23 @@ angular.module('DataServices')
     		this.query.equalTo('owner', owner);
     		this.query.descending('createdAt');
     		return this.load();
+    	},
+    	loadMyPlan: function(id) {
+    		this.query = (new Parse.Query(Plan));
+    		this.query.get(id);
+    		return this.load();
+    	},
+    	loadMyInvite: function(id) {
+    		this.query = (new Parse.Query(Plan));
+    		this.query.get(id);
+    		return this.load();
+    	},    	
+    	loadMyInvites: function(recipient) {
+    		this.query = (new Parse.Query(Plan));
+    		// use enhanced load() function to fetch collection
+    		this.query.equalTo('rsvpList', recipient);
+    		this.query.descending('createdAt');
+    		return this.load();    		
     	},
     	addPlan: function(owner, title, info, rsvpList) {
     		// save request_id to Parse

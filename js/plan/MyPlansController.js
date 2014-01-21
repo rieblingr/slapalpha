@@ -19,9 +19,6 @@ angular.module('Plan')
 		
 	init();
 	
-	function setValues() {
-	
-	}
 	
 	function init() {
 		if (UserService.getUser() == null) {
