@@ -41,15 +41,16 @@ Description: Invite details View
 
 <div class="content">
 	<div class="content-padded">
-		<p> testing: {{routeParams}} </p>
-		<br>
 		<ul class="inset list">
 			<li><strong>From:</strong> {{myplan.attributes.owner}}</li>
 		</ul>
-	
-		<h2 class="center">{{myplan.attributes.title}}</h2>
+		
+		<div class="title-content">
+			<h2 class="center">{{myplan.attributes.title}}</h2>
+		</div>
 
 		<div class="info-content">
+			<p><strong>Info:</strong></p> 
 			<p>{{myplan.attributes.info}}</p>
 		</div>
 		<div class="content-padded right">
@@ -57,7 +58,7 @@ Description: Invite details View
 			<a class="button-positive quarter">Yes</a>
 			<a class="button-negative quarter">No</a>
 		</div>
-		<a class="button-block">Invited Friends<span class="count">1</span></a>
+		<a href="#/{{myplan.id}}/rsvplist" class="button-block">Invited Friends<span class="count">1</span></a>
 		
 	</div>	
 </div>

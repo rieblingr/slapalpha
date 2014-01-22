@@ -4,6 +4,7 @@ Description: Create Plan View
  
  
  -->
+<div ng-show="!rsvp"> 
  <header class="bar-title">
 		 <a class="button-icon" snap-toggle="left" href="#/createplan">
 			<img src="../icons/menu2.png"></img>
@@ -40,21 +41,72 @@ Description: Create Plan View
 		</ul>
 	</nav>
  
-<div class="content">	
-	<div class="content-padded">	
-		<form>
-			<div class="input-group">
-				<div class="input-row">
-					<label>Title:</label>
-					<input type="text" placeholder="Plan Title" ng-model="newPlan.title" value=""></input>
-				</div>	
-			</div>		
+	<div class="content">	
+		<div class="content-padded">	
+			<form>
+				<div class="input-group">
+					<div class="input-row">
+						<label>Title:</label>
+						<input type="text" placeholder="Plan Title" ng-model="newPlan.title" value=""></input>
+					</div>	
+				</div>		
 			
-			<textarea rows="6" placeholder="Plan Info" ng-model="newPlan.info"></textarea>
+				<textarea rows="10" placeholder="Plan Info" ng-model="newPlan.info"></textarea>
 			
-			<button class="button-main button-block" ng-click="addRsvpList()">Invite Friends</button>
-			<button class="button-main button-block" ng-click="createPlan()">Send</button>
-		</form>
+				<button class="button-main button-block" ng-click="addRsvpList()">Invite Friends</button>
+				<button class="button-main button-block" ng-click="createPlan()">Send</button>
+			</form>
+		</div>
+	
+
 	</div>
 </div>
+
+<div ng-show="rsvp">
+	<header class="bar-title">
+		 <a class="button-icon" ng-click="finishRsvpList()">
+			<img src="../icons/checkmark2.png"></img>
+		 </a>
+		  <h1 class="title">RSVP List</h1>
+	</header>
+
+	<div class="bar-standard bar-header-secondary">
+		<form>
+			<input type="search" placeholder="Search">
+		</form>	
+	</div>
+
+	<nav class="bar-standard bar-header-tertiary">
+		<ul class="segmented-controller">
+			<li ng-class="{ active: segmentSelection==0 }">
+				<a ng-click="showGroupsList()">Groups</a>
+			</li>
+			<li ng-class="{ active: segmentSelection==1 }">
+				<a ng-click="showContactsList()">Contacts</a>
+			</li>
+		</ul>
+	</nav>
+	
+	<div class="bar-standard bar-footer">
+		<a ng-click="finishRsvpList()" class="button-main button-block">Invite>></a>
+	</div>
+	
+	<div class="content">
+		<div class="content-padded">				
+				<ul class="list inset">
+					<li ng-repeat="contact in contacts">
+						<label>
+						  <input
+							type="checkbox"
+							name="selectedContacts[]"
+							value="{{contact.name}}"
+							ng-model="contact.selected"
+						  > {{contact.name}}
+						</label>
+					</li>
+				</ul>				
+		</div>	
+	</div>
+</div>
+
 

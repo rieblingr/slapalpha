@@ -24,7 +24,7 @@ angular.module('slapApp.controllers')
 *
 *
 */ 
-.controller('ContactsCtrl', function($scope) {
+.controller('RsvpCtrl', function($scope) {
 	
 
 })

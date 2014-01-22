@@ -10,13 +10,6 @@ angular.module('Plan')
 	$scope.plans = new PlanService.collection;
 	$scope.myplans = [];
 		
-	// $scope.update = function() {
-// 		$scope.plans.each(function(plan) {
-// 			console.log(plan.title);
-// 			$scope.myplans.add(plan);
-// 		});
-// 	};
-		
 	init();
 	
 	

@@ -33,8 +33,29 @@
 	margin-top: 70px;
 }
 
-
+.title-content {
+	border: 2px solid;
+	border-radius:15px;
+	margin: 10px 0px;
+	padding:15px 10px 15px 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	color: #00529B;
+	background-color: #BDE5F8;
+}
 .info-content {
+	border: 2px solid;
+	border-radius:15px;
+	margin: 10px 0px;
+	padding:15px 10px 15px 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	color: #00529B;
+	background-color: #BDE5F8;
+	height: 150px;
+}
+
+.invitation-content {
 	border: 2px solid;
 	border-radius:15px;
 	margin: 10px 0px;
@@ -44,6 +65,7 @@
 	color: #00529B;
 	background-color: #BDE5F8;
 }
+
 
 /* Angular.js animated navigation */
   .slide-enter,
@@ -136,21 +158,33 @@
 }
 
 /** Invite Container carousel styling */
-.invite-container{
-    position: relative;
-    /* you have to add a height here if your container isn't otherwise set 
-       becuse the absolutely positioned image divs won't calculate the height 
-       for you */ 
-  height:300px;
-  background:white;
-  border:1px solid black;
-  overflow:hidden;
-  padding: 5px 5px;
-  
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 20px; 
-	
+.invite-container {
+	border: 2px solid;
+	border-radius:15px;
+	margin: 10px 30px 30px 30px;
+	padding:15px 10px 15px 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	color: #00529B;
+	background-color: lightblue;	
+	height: 230px;
 }
+
+.invite-title {
+	margin: 10px 10px;
+	padding: 5px 10px 5px 10px;
+	font-size: 20px;
+}
+
+.invite-info {
+	margin: 5px 5px;
+	padding: 5px 10px 5px 10px;
+}
+
+.rsvpyes {
+	background-color: lightblue;	
+}
+
+
 
 

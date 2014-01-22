@@ -167,6 +167,8 @@ a {
   -webkit-overflow-scrolling: touch;
 }
 
+
+
 /* Hack to force all relatively and absolutely positioned elements still render while scrolling
    Note: This is a bug for "-webkit-overflow-scrolling: touch" */
 .content > * {
@@ -189,7 +191,13 @@ a {
 }
 .bar-header-secondary ~ .content {
   top: 88px;
-}/* General bar styles
+}
+
+.bar-header-tertiary ~ .content {
+  top: 133px;
+}
+
+/* General bar styles
 -------------------------------------------------- */
 
 [class*="bar-"] {
@@ -215,6 +223,10 @@ a {
 /* Modifier class to dock any bar to bottom of viewport */
 .bar-footer {
   bottom: 0;
+}
+/* Modifier class to dock any bar to bottom of viewport */
+.bar-footer-secondary {
+  bottom: 45px;
 }
 
 /* Generic bar for wrapping buttons, segmented controllers, etc. */
@@ -1183,7 +1195,9 @@ button.button-block {
   border: 1px solid #000;
   border-radius: 3px;
   -webkit-overflow-scrolling: touch;
-}/* Modals
+}
+
+/* Modals
 -------------------------------------------------- */
 .modal {
   position: fixed; 
@@ -1209,7 +1223,8 @@ button.button-block {
           transition:         transform .25 ease-in-out;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-}/* Slider styles (to be used with sliders.js)
+}
+/* Slider styles (to be used with sliders.js)
 -------------------------------------------------- */
 
 /* Width/height of slider */

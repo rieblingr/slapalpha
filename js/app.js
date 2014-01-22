@@ -58,7 +58,12 @@ slapApp.config(['$routeProvider', function($routeProvider) {
   	{templateUrl: 'partials/plan-details.html', 
   	 controller: 'PlanDetailsCtrl',
   	  controllerAs: 'planctrl'});
-  	 	 
+  
+  $routeProvider.when('/:planId/rsvplist', 
+  	{templateUrl: 'partials/rsvp-list.html', 
+  	 controller: 'RsvpCtrl',
+  	  controllerAs: 'rsvpctrl'});
+  	  	 	 
   $routeProvider.when('/createplan', 
   	{templateUrl: 'partials/createplan.html', 
   	 controller: 'CreatePlanCtrl',

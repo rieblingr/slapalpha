@@ -6,11 +6,11 @@ angular.module('DataServices', [])
 .factory('GroupModel', ['ParseQueryAngular', function(ParseQueryAngular) {
 	
 	var Group = Parse.Object.extendAngular({
-	
+		
 	});
 	
     var Groups = Parse.Collection.extendAngular({
-    
+    	
     });
     
     // The factory function returns PlanModel, which is injected into controllers.

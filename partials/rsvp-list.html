@@ -1,0 +1,29 @@
+<!-- 
+Description: RSVP details View
+ 
+ 
+ -->
+<header class="bar-title">
+	<a class="button-icon" href="#/myplans">
+		<img src="../icons/arrow-left3.png"></img>
+	</a>
+	<h1 class="title">RSVPs</h1>
+</header>
+
+<div class="bar-standard bar-header-secondary">
+	<form>
+		<input type="search" placeholder="Search">
+	</form>	
+</div>
+
+<div class="content">
+	<div class="content-padded">
+		<ul class="inset list">
+			<li class="ng-class:rsvp.response" ng-repeat="rsvp in rsvpList">			
+				<strong>{{rsvp.user}}</strong>	
+											
+			</li>
+		</ul>		
+	</div>	
+</div>
+

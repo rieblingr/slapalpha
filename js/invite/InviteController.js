@@ -12,15 +12,16 @@ angular.module('slapApp.controllers')
 	
 	init();
 	
-	
-	$scope.next = function(index) {
+	$scope.next = function() {
+		var index = $scope.myinvites.indexOf($scope.selected);	
 		var nextPosition = (index + 1) % $scope.myinvites.length;
 		console.log($scope.myinvites.length);
 		console.log(index);
 		$scope.selected = $scope.myinvites[nextPosition];
 	};
 	
-	$scope.prev = function(index) {		
+	$scope.prev = function() {	
+		var index = $scope.myinvites.indexOf($scope.selected);	
 		if(index == 0) {
 			index = $scope.myinvites.length;
 		}
@@ -44,8 +45,9 @@ angular.module('slapApp.controllers')
 					i = i + 1;
 				});						
 				$scope.ready = true;
-				console.log($scope.myinvites);		
+				
 				$scope.selected = $scope.myinvites[0];
+				console.log($scope.myinvites.indexOf($scope.selected));		
 			});			
 		}		
 	};
